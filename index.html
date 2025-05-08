@@ -8,7 +8,7 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: sans-serif;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
       background-color: #f4f4f4;
       text-align: center;
     }
@@ -52,6 +52,29 @@
       border: 2px solid #ccc;
       border-radius: 10px;
     }
+
+    .thank-you-message {
+      display: none;
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 2em;
+      color: #fff;
+      background: linear-gradient(to right, #ff69b4, #ffa500, #00bfff);
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      animation: popIn 0.5s ease forwards;
+    }
+
+    @keyframes popIn {
+      from {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 <body>
@@ -65,11 +88,21 @@
     <div>
       <img src="toe.jpg" alt="Toe Cartoon" class="toe-image" />
     </div>
+
+    <!-- Fun thank you message -->
+    <div id="thankYouMessage" class="thank-you-message">
+      🎉 THANK YOU FOR DONATING! 🎉<br />
+      Now we both have 9 toes 🦶💖🦶
+    </div>
   </div>
 
   <script>
     function showThankYou() {
-      alert("Thank you for donating, now we both have 9 toes");
+      const message = document.getElementById("thankYouMessage");
+      message.style.display = "block";
+
+      // Optional: hide the button
+      document.querySelector(".donate-button").style.display = "none";
     }
   </script>
 </body>
